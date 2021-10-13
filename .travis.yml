@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t cookcm/node .
   - docker images cookcm/node  
+
+before_deploy:
+ - docker login -u cookcm -p notraveltoLondon  
+
+deploy:
+   provider: script
+   script: docker push cookcm/node
+   on:
+    branch: master 
