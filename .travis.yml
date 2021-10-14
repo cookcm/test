@@ -14,3 +14,8 @@ deploy:
    script: docker push cookcm/node
    on:
     branch: master 
+
+notifications:
+  slack:
+    rooms:
+    - cookfamily-talk:kkmLfHlke6dPVGH6j9VmlqCG#travis
